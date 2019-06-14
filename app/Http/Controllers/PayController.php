@@ -80,8 +80,9 @@ class PayController extends Controller
         return $this->sign($this->getSignContent($params));
     }
     protected function sign($data) {//签名函数利用商户私钥对待签名字符串进行签名，并进行Base64编码
-        $priKey = file_get_contents($this->rsaPrivateKeyFilePath);
-        dd($priKey);
+        //$priKey = file_get_contents($this->rsaPrivateKeyFilePath);
+        $priKey=openssl_get_privatekey("file://".storage_path('app/private.pem'));
+        //dd($priKey);
         $res = openssl_get_privatekey($priKey);
        // dd($res);
         ($res) or die('您使用的私钥格式错误，请检查RSA私钥配置');

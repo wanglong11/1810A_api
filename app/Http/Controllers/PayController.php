@@ -66,7 +66,7 @@ class PayController extends Controller
         $prouct_code = 'QUICK_WAP_WAY';
         $url = 'https://openapi.alipaydev.com/gateway.do';
         $bizcont = [
-            'subject' => '月七',//交易标题/订单标题/订单关键
+            'subject' => '月七11',//交易标题/订单标题/订单关键
             'out_trade_no'=>$order_info->order_no , //订单号
             'total_amount'      => $order_info->order_amount / 100, //支付金额
             'product_code'      => $prouct_code //固定值
